@@ -10,8 +10,9 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "test": "prettier --check . && xo && ava",
-    "prettify": "prettier --write ."
+    "ava":  "ava --verbose",
+    "test": "xo && prettier --check . && ava",
+    "fix": "xo --fix . && prettier --write . && ava"
   },
   "files": [
     "dist"
@@ -40,18 +41,22 @@
   },
   "ava": {
     "extensions": {
-      "ts": "module",
-      "tsx": "module"
+      "ts": "module"
     },
     "nodeArguments": [
-      "--loader=ts-node/esm"
+      "--loader=ts-node/esm",
+      "--experimental-specifier-resolution=node"
+    ],
+    "files": [
+      "test/**/*.spec.ts"
     ]
   },
   "xo": {
     "extends": "xo-react",
     "prettier": true,
+    "space": true,
     "rules": {
-      "react/prop-types": "off"
+      "react/prop-ypes": "off"
     }
   }
 }

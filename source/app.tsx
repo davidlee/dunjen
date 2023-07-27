@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react"
-import { Text, Box } from "ink"
+import React, {useState, useEffect} from 'react'
+import {Text, Box} from 'ink'
 
-// this may be useful for processing user input
+// This may be useful for processing user input
 //
 // import useStdin from 'ink';
 // const {stdin} = useStdin();
 
-const width: number = 120
-const height: number = 40
+const width = 120
+const height = 40
 
 type Props = {
-  name: string | undefined
+  readonly name: string | undefined
 }
 
-const Counter = () => {
+function Counter() {
   const [counter, setCounter] = useState(0)
 
   useEffect(() => {
@@ -39,10 +39,10 @@ export default function App({}: Props) {
       flexWrap="wrap"
       height={height}
     >
-      {Array.from({ length: height }, (_, y) => (
-        <Box key={"y-" + y}>
-          {Array.from({ length: width }, (_, x) => (
-            <Text key={y + "," + x}>.</Text>
+      {Array.from({length: height}, (_, y) => (
+        <Box key={'y-' + y}>
+          {Array.from({length: width}, (_, x) => (
+            <Text key={y + ',' + x}>.</Text>
           ))}
         </Box>
       ))}

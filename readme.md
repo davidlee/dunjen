@@ -25,3 +25,7 @@ It Works For Me™ using:
 - direnv
 - asdf (nodejs: 20.4.0) +asdf-direnv
 - brew (git, curl)
+
+TODO:
+
+- solve test issues: https://github.com/xojs/xo/issues/718

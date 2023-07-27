@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Text, Box } from "ink"
 
+// this may be useful for processing user input
+//
 // import useStdin from 'ink';
 // const {stdin} = useStdin();
 
